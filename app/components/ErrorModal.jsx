@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = require('prop-types');
 
 var ErrorModal = React.createClass({
     getDefaultProps: function () {
@@ -6,10 +7,10 @@ var ErrorModal = React.createClass({
             title: 'Error'
         };
     },
-    // propTypes: {
-    //     title: React.propTypes.string,
-    //     message: React.propTypes.string.isRequired
-    // },
+    propTypes: {
+        title: PropTypes.string,
+        message: PropTypes.string.isRequired
+    },
     componentDidMount: function () {
         var modal = new Foundation.Reveal($('#error-modal'));
         modal.open();
